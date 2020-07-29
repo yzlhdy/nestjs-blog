@@ -40,6 +40,8 @@ export class UserService {
 
   async register(requestBody: any): Promise<any> {
     const { accountName, realName, password, repassword, mobile } = requestBody
+    console.log(requestBody);
+
     /**
      * 判断两次输入密码是否相等
      */
