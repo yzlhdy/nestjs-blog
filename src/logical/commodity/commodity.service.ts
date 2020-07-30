@@ -72,6 +72,8 @@ export class CommodityService {
      * @memberof CommodityService
      */
     async createCommodity(body: any, username: string): Promise<any> {
+        console.log(body);
+
         const { columnId = 0, name, description = '', marketPrice = 0, saleMoney = 0 } = body;
         const createCommoditySQL = `
       INSERT INTO commodity
@@ -95,6 +97,8 @@ export class CommodityService {
      * @memberof CommodityService
      */
     async updateCommodity(body: any, username: string) {
+        console.log(body, username);
+
         const { id, columnId, name, description, saleMoney, marketPrice } = body;
 
 
@@ -115,7 +119,7 @@ export class CommodityService {
         await sequelize.query(updateCommoditySQL, { transaction, logging: false });
         return {
             code: 200,
-            msg: 'Success',
+            msg: '修改成功',
         };
     }
 

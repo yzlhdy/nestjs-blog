@@ -34,7 +34,7 @@ export class CommodityController {
 
     // 删除商品
     @UseGuards(AuthGuard('jwt'))
-    @UseInterceptors(new RbacInterceptor(1))
+    @UseInterceptors(new RbacInterceptor(2))
     @Post('delete')
     async deleteCommodity(@Body() body: any) {
         return await this.commodityService.deleteCommodity(body);
